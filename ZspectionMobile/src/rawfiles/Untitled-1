@@ -1,0 +1,32 @@
+<ScrollView>
+                        <Carousel
+                            extraData={this.state}
+                            ref={(c) => { this._carousel = c; }}
+                            data={this.state.inspectiontype}
+                            renderItem={this.renderItem}
+                            sliderWidth={viewWidth}
+                            itemWidth={itemWidth}
+                            firstItem={this.state.activeSlide}
+                            
+                            // onSnapToItem={(index) => this.setState({ activeSlide: index }) }
+                            // onPress={() => { this._carousel.snapToNext(() => {
+                            
+                            // }) }}
+                            // snapToItem={this.nextPage}
+                            onBeforeSnapToItem={(slideIndex) => this.nextPage(slideIndex)}
+                            // onSnapToItem={(slideIndex) => console.log("called")}
+                        />
+                    </ScrollView>
+                    <View style={[styles.row,{padding:10, borderTopColor:'#d4d4d4', borderTopWidth:1,borderRadius:1,justifyContent:'space-between'}]}>
+                        <View style={{alignItems:'flex-start'}}>
+                            <Button style={styles.normalButton} onPress={() => this.props.navigation.goBack()}>
+                                <Text style={styles.textCenter}>Back</Text>
+                            </Button>
+                        </View>
+                        
+                        <View style={{alignItems:'flex-end'}}>
+                            <Button disabled={this.state.diableNextButton} style={!this.state.diableNextButton && styles.normalButton}  onPress={() => this.searchSummary()}>
+                                <Text style={styles.textCenter}>Next</Text>
+                            </Button>
+                        </View>
+                    </View>

@@ -1,0 +1,76 @@
+import React, { Component } from 'react';
+import {
+  createStackNavigator,
+} from 'react-navigation-stack';
+
+import CompanyBottomNavigator from './CompanyBottomNavigator';
+import CreateInspector from '../Containers/Company/inspector/CreateInspector';
+import PoolInspectorList from '../Containers/Company/inspector/PoolInspectorList';
+import { Icon, Button } from 'react-native-elements';
+import InspectorDetail from '../Containers/Company/inspector/InspectorDetail';
+import InspectorRegisterMatrix from '../Containers/Company/inspector/RegisterMatrix';
+import CreateOfflineBooking from '../Containers/Company/Services/CreateOfflineBooking';
+import Maps from "../Maps";
+
+const CompanyHome = createStackNavigator({
+    CompanyHome: {
+      screen: CompanyBottomNavigator,
+      navigationOptions: ({ navigation }) => ({
+        headerTitle: 'Home',
+        headerStyle: {backgroundColor:'#28558E'},
+        headerTintColor: '#FFF',
+        
+      }),
+    },
+    Maps:{
+      screen: Maps,
+      navigationOptions: ({ navigation }) => ({
+        headerTitle:'Inspector Territory',
+        headerStyle: {
+          backgroundColor:'#28558E',
+        },
+        headerTintColor: '#fff',
+        headerRight: <Icon iconStyle={{ marginRight:15, fontWeight:'normal',}} size={20} color="#FFF" name='notifications' type='material' />
+      }),
+    },
+    CreateInspector: {
+      screen: CreateInspector,
+      navigationOptions: ({ navigation }) => ({
+        headerTitle:'Create Inspector',
+        headerStyle: {backgroundColor:'#28558E'},
+        headerTintColor: '#FFF',
+      }),
+    },
+    InspectorRegisterMatrix: {
+      screen: InspectorRegisterMatrix,
+      navigationOptions: ({ navigation }) => ({
+        headerTitle:'Set Price Matrix',
+        headerStyle: {backgroundColor:'#28558E'},
+        headerTintColor: '#FFF',
+        headerRight: <Icon iconStyle={{ marginRight:15, fontWeight:'normal',}} size={20} color="#FFF" name='notifications' type='material' />
+      }),
+    },
+    CreateOfflineBooking: {
+      screen: CreateOfflineBooking,
+      navigationOptions: ({ navigation }) => ({
+        headerTitle:'Create Offline Booking',
+        headerStyle: {backgroundColor:'#28558E'},
+        headerTintColor: '#FFF',
+      }),
+    },
+    InspectorDetail:{
+      screen: InspectorDetail,
+      navigationOptions: ({ navigation }) => ({
+        headerTitle:'Inspector Detail',
+        headerStyle: {backgroundColor:'#28558E'},
+        headerTintColor: '#FFF',
+        headerRight: <Button title="Holiday Leave" type="clear" />
+      }),
+    }
+},
+{headerLayoutPreset: 'center'},
+{
+    initialRouteName: 'CompanyHome'
+});
+
+module.exports = CompanyHome;

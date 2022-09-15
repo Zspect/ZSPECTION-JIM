@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "443938113860",
+    "firebase_url": "https://zspection-1567143157760.firebaseio.com",
+    "project_id": "zspection-1567143157760",
+    "storage_bucket": "zspection-1567143157760.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:443938113860:android:40542526e671ef6b81af11",
+        "android_client_info": {
+          "package_name": "com.zspection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "443938113860-s7he168h9ql7r0ih38jv38egpbsokmcg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zspection",
+            "certificate_hash": "eea6cb8d5a05faec8d9dd1ee1732e8d748a40654"
+          }
+        },
+        {
+          "client_id": "443938113860-s7he168h9ql7r0ih38jv38egpbsokmcg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zspection",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "443938113860-2sbhmunr6pf1hf58sl9mqndrqsd46mhe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA97HsKF9Moz26ngjD_j5tvBbt0GPcvBo8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "443938113860-2sbhmunr6pf1hf58sl9mqndrqsd46mhe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

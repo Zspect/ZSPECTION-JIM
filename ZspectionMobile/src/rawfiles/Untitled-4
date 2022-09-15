@@ -1,0 +1,46 @@
+import React, { Component } from 'react';
+import {
+  createStackNavigator,
+} from 'react-navigation-stack';
+
+import InspectorBottomNavigator from './InspectorBottomNavigator';
+import OfflineBooking from '../Containers/Inspector/Inspections/CreateOfflineBooking';
+import InspectionDetail from '../Containers/Inspector/Inspections/InspectionDetail';
+import UpdatePriceMatrix from '../Containers/Inspector/UpdatePriceMatrix';
+
+const InspectorHome = createStackNavigator({
+  InspectorHome: {
+    screen: InspectorBottomNavigator,
+    navigationOptions: ({ navigation }) => ({
+      header:null,
+    }),
+  },
+  InspectionDetail: {
+    screen: InspectionDetail,
+    navigationOptions: ({ navigation }) => ({
+        headerTitle:'Details',
+        headerStyle: {backgroundColor:'#28558E'},
+        headerTintColor: '#FFF',
+    }),
+  },
+  OfflineBooking: {
+    screen: OfflineBooking,
+    navigationOptions: ({ navigation }) => ({
+        headerTitle:'Create Offline Booking',
+        headerStyle: {backgroundColor:'#28558E'},
+        headerTintColor: '#FFF',
+    }),
+  },
+  UpdatePriceMatrix:{
+    screen: UpdatePriceMatrix,
+    navigationOptions: ({ navigation }) => ({
+        headerTitle:'Price Martix',
+        headerStyle: {backgroundColor:'#28558E'},
+        headerTintColor: '#FFF',
+    }),
+  }
+},{
+    initialRouteName: 'InspectorHome'
+});
+
+module.exports = InspectorHome;

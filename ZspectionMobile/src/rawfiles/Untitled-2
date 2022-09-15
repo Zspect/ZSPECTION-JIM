@@ -1,0 +1,338 @@
+import React, {Component} from 'react';
+import {Platform, Dimensions, Text,  StyleSheet, View, ScrollView, Image, FlatList, TouchableOpacity} from 'react-native';
+import styles from '../../../../assets/styles/style.js';
+
+import { CheckBox, Avatar, Icon, Input,Rating } from 'react-native-elements';
+import DatePicker from 'react-native-date-picker'
+import Common from '../../Common';
+import Loader from '../../../Components/Loader';
+import Advertisement from '../../../Components/Advertisement';
+import Errors from '../../../Components/Errors';
+import API from '../../../Api/Api';
+import Carousel from 'react-native-snap-carousel';
+
+
+const IS_IOS = Platform.OS === 'ios';
+const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
+const viewWidth = viewportWidth;
+const itemWidth = viewWidth;
+export default class Register extends Component {
+
+    inspectionListMatch = [];
+    
+	constructor(props) {
+        super(props)
+        this.state = {
+            activeSlide:0,
+            inspectionMarked: [],
+            cityList: [],
+            submit: false,
+            errors: [],
+            address: [],
+            date: '',
+            time: '',
+            list: [],
+            inspectionList: [],
+            inspectiontype: [],
+            inspectionFound:[],
+            favouriteList:[],
+            inspectionCompanies: [],
+            diableNextButton: true,
+        }
+        this.common = new Common();
+    }
+    
+    componentDidMount() {
+        this.setData();
+    }
+
+    setData() {
+        var request = this.props.navigation.getParam('request');
+        var inspectionCompanies = this.props.navigation.getParam('inspectionCompanies');
+        console.log("inspectionCompanies: ",inspectionCompanies);
+
+        this.setState({
+            address:request.address,
+            date: request.inspectiondate,
+            time: request.time,
+            inspectionList: this.props.navigation.getParam('inspectionList'),
+            inspectionCompanies: inspectionCompanies,
+        })
+        this.filterList(request.inspectiontype, inspectionCompanies);
+    }
+
+    filterList(inspectiontype, inspectionCompanies) {
+        // var cmp = [];
+        // inspectiontype.map( inspection => {
+        //     inspectionCompanies.map(company => {
+        //         if(inspection.inspectiontypeid == company.InspectionTypeId) {
+        //             cmp.push(inspection);
+        //             this.inspectionListMatch.push(inspection.inspectiontypeid);
+        //         }
+        //     })
+        // })
+        // let unique = [...new Set(cmp)];
+        // this.setState({inspectiontype:unique})
+        var cmp = [];
+        inspectiontype.map( inspection => {
+            var arr = [];
+            inspectionCompanies.map(company => {
+                if(inspection.inspectiontypeid == company.InspectionTypeId) {
+                    arr.push(company);
+                }
+            })
+            if(arr.length > 0) {
+                cmp.push({"inspectiontypeid":inspection.inspectiontypeid, "company":arr});
+            }
+        })
+        console.log("list: ",cmp);
+        this.setState({inspectiontype:cmp})
+    }
+
+    getName = (id) => {
+        var name = '';
+        this.state.inspectionList.filter( (item) => {
+            if(item.InspectionTypeId == id) {
+                name = item.InspectionTypeName;
+            }
+        })
+        return name;
+    }
+
+    // markAsFavourite = (inspectorId, status) => {
+    //     if(this.favorite(inspectorId)) {
+    //         var list = this.state.inspectionCompanies;
+    //         var mark = list.filter(item => { return item.InspectorId === inspectorId })
+    //         console.log("mark: ",mark);
+    //         // var index = list.indexOf(inspectorId);
+    //         // if(index >= 0){
+    //         //     list.splice(index,1)
+    //         // }
+    //         // else {
+    //         //     list.push(inspectorId)
+    //         // }
+    //         // this.setState({favouriteList:list});     
+    //     }
+    // }
+
+    markAsFavourite = async (inspectorId, status) => {
+        
+        this.setState({loading: true});
+        var authToken = await AsyncStorage.getItem("authToken");
+        var profile = JSON.parse(await AsyncStorage.getItem("profile"));
+        var header = {"authentication":authToken};
+        var data = {"inspectorid":inspectorId,"agentid":profile.AgentId};
+        var response = new API('Favorite',data,header).getResponse();
+        
+        response.then( result => {
+            this.setState({loading: false});
+            if(result.statuscode == 200) {
+                var list = [...this.state.inspectionCompanies];
+                list.find(item => {
+                    if(item.InspectorId === inspectorId) {
+                        item.IsLike = !status;
+                        this.forceUpdate();
+                        
+                    }
+                })                
+            }
+            else {
+                var errors = [];
+                errors.push("invalid response");
+                this.setState({errors: errors})
+               
+            }
+        }).catch(error => {
+            this.setState({loading: false});
+            var errors = [];
+            errors.push("Please try again later");
+            this.setState({errors: errors})
+            
+        })
+        
+    }
+
+    markAsChecked = (InspectorId, inspectionTypeId, itemChecked) => {
+        var item = {"inspectionTypeId": inspectionTypeId, "InspectorId" : InspectorId, "item": itemChecked}
+        var list = this.state.inspectionMarked;
+        for(var i = 0; i<list.length;i++) {
+            if(list[i].inspectionTypeId == inspectionTypeId) {
+                list.splice(i,1);
+            }
+        }
+        list.push(item)
+        this.setState({errors: []})
+        this.forceUpdate();
+        this.goNextPage();
+    }
+
+    searchSummary() {
+        this.props.navigation.navigate("SearchSummary",{
+            request: this.props.navigation.getParam('request'),
+            inspectionMarked: this.state.inspectionMarked,
+            inspectionList: this.props.navigation.getParam('inspectionList')
+        })
+    }    
+
+    renderSeperateItem = ({ item, index }) => {
+        var radio = false;
+        for(var i = 0; i<this.state.inspectionMarked.length;i++) {
+            if(this.state.inspectionMarked[i].inspectionTypeId == item.InspectionTypeId && this.state.inspectionMarked[i].InspectorId == item.InspectorId) {
+                radio = true;
+            }
+        }
+        return(
+            <View style={[styles.summarySelectedIspector]}>
+                 <CheckBox
+                        textStyle={{margin:0,padding:0}}
+                        size={18}
+                        checkedIcon='dot-circle-o'
+                        uncheckedIcon='circle-o'
+                        checked={radio}
+                        containerStyle={{margin:0,padding:0, }}
+                        center
+                        onPress={() => this.markAsChecked(item.InspectorId,item.InspectionTypeId, item)}
+                    />
+                <TouchableOpacity style={[styles.center,{width:80}]} onPress={() => this.props.navigation.navigate('CompanyDetail', {inspector:item, favorite:this.state.favouriteList.includes(item.InspectorId)})}>
+                    <Avatar
+                        rounded
+                        source={{
+                            uri: item.ProfilePic,
+                        }}
+                        size="large"
+                    />
+                    <Text style={[styles.nameTxt,{textAlign:'center', marginBottom:6, textDecorationLine:'underline'}]}>{item.InspectorName}</Text>
+                    <Rating
+                        ratingCount={5}
+                        imageSize={14}
+                        readonly
+                        startingValue={1}
+                    />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.flatListItemTextRow} onPress={() => this.props.navigation.navigate('CompanyDetail', {inspector:item, favorite:this.state.favouriteList.includes(item.InspectorId)})}>
+                    <Text style={styles.nameTxt}>{item.CompanyName} SGS Inspection Services </Text>
+                    <Text numberOfLines={3} style={styles.nameTxt2}>{item.CompanyBio} SGS Inspection Services SGS Inspection Services SGS Inspection Services SGS Inspection Services SGS Inspection Services SGS Inspection Services SGS Inspection Services SGS Inspection Services </Text>
+                </TouchableOpacity>
+                <View style={{justifyContent:'space-between'}}>
+                    <View style={styles.center}>
+                        <Text style={styles.nameTxt}>$ {item.price}</Text>
+                    </View>
+                    <View style={[styles.center]}>
+                        <CheckBox
+                            size={16}
+                            checkedIcon='heart'
+                            checkedColor="#B9183A"
+                            uncheckedIcon='heart-o'
+                            checked={item.IsLike}
+                            onPress={() => this.markAsFavourite(item.InspectorId,item.IsLike)}
+                        />
+                    </View>
+                </View>
+            </View>
+        )
+    }
+
+    getInspectionCompany = () => {
+        // var inspectionCompanies = TestJson;
+        // var cmp = [];
+        // inspectionCompanies.map(company => {
+        //     if(id == company.InspectionTypeId) {
+        //         cmp.push(company);
+        //         this.inspectionListMatch.push(id);
+                
+        //     }
+        // })
+        
+        // if(cmp.length < 1) return null;
+        return(
+            <FlatList
+                data={cmp}
+                keyExtractor={(item, index) => `${index}`}
+                renderItem={this.renderSeperateItem}
+            />
+        )
+    }
+
+    goNextPage = () => {
+        let inspectionSlideFound = [...new Set(this.inspectionListMatch)];
+        var status = [];
+        inspectionSlideFound.map( (id) => {
+            var fill = -1;
+            for(var i=0; i<this.state.inspectionMarked.length;i++) {
+                if(this.state.inspectionMarked[i].inspectionTypeId === id) {
+                    fill = id;
+                    //this.props.navigation.navigate('Favorites', {inspectionList:this.state.inspectionList})
+                }
+            }
+            status.push(fill);
+        })
+        console.log("status: ",status)
+        var index = status.indexOf(-1);
+        if(index >= 0) {
+            this._carousel.snapToItem(index);
+            this.setState({activeSlide:index})
+            // this.showError("Select one inspector for all inspection")
+            //this.props.navigation.navigate('Favorites', {inspectionList:this.state.inspectionList})
+        }
+        else {
+            this.setState({diableNextButton: false})
+           
+        }
+        
+        
+    }
+    
+    renderItem = ({item, index}) => {
+        var inspectionCompanies = this.state.inspectionCompanies;
+        var cmp = [];
+        inspectionCompanies.map(company => {
+            if(item.inspectiontypeid == company.InspectionTypeId) {
+                cmp.push(company);
+                this.inspectionListMatch.push(item.inspectiontypeid);
+            }
+        })
+        
+        if(cmp.length < 1) return null;
+        return (
+            <View>
+                <View style={styles.container}>
+                    <Text style={[styles.heading2,styles.capitalize]}>{this.getName(item.inspectiontypeid)} Inspection</Text>
+                </View>
+                {this.getInspectionCompany(cmp)}
+            </View>
+        );
+    }
+
+    nextPage = (index) => {
+        var snap = 0;
+        var length = 0;
+        console.log("snap: ",index)
+        // this._carousel.snapToItem(snap);
+        // this.setState({activeSlide:index})
+    }
+    render() {
+        var enabled = 'disabled';
+        if(this.state.loading) {
+            return <Loader />
+        }
+        return (
+            <View style={{flex:1}}>
+                <Advertisement />
+                <View style={styles.container}>
+                    <Text style={styles.heading2}>Inspection Request</Text>
+                    <View style={[styles.row]}>
+                        <View style={{justifyContent:"space-between",flex:1}}>
+                            <Text style={styles.font12}>{this.state.address}</Text>
+                        </View>
+                        <View style={{justifyContent:"space-between",flex:1}}>
+                            <Text style={[{textAlign:'right'},styles.font12]}>{this.state.date} | {this.state.time}</Text>
+                        </View>
+                    </View>
+                </View>
+                <View style={styles.border2}></View>
+                {this.getInspectionCompany}
+                
+            </View>
+        );
+    }
+}
