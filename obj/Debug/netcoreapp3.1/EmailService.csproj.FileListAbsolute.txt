@@ -1,0 +1,69 @@
+C:\Users\SSLTP100\Desktop\identity-aspnetcore-external-provider-identity\IdentityByExamples\EmailService\bin\Debug\netcoreapp3.1\EmailService.deps.json
+C:\Users\SSLTP100\Desktop\identity-aspnetcore-external-provider-identity\IdentityByExamples\EmailService\bin\Debug\netcoreapp3.1\EmailService.dll
+C:\Users\SSLTP100\Desktop\identity-aspnetcore-external-provider-identity\IdentityByExamples\EmailService\bin\Debug\netcoreapp3.1\EmailService.pdb
+C:\Users\SSLTP100\Desktop\identity-aspnetcore-external-provider-identity\IdentityByExamples\EmailService\obj\Debug\netcoreapp3.1\EmailService.csprojAssemblyReference.cache
+C:\Users\SSLTP100\Desktop\identity-aspnetcore-external-provider-identity\IdentityByExamples\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfoInputs.cache
+C:\Users\SSLTP100\Desktop\identity-aspnetcore-external-provider-identity\IdentityByExamples\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfo.cs
+C:\Users\SSLTP100\Desktop\identity-aspnetcore-external-provider-identity\IdentityByExamples\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.CoreCompileInputs.cache
+C:\Users\SSLTP100\Desktop\identity-aspnetcore-external-provider-identity\IdentityByExamples\EmailService\obj\Debug\netcoreapp3.1\EmailService.dll
+C:\Users\SSLTP100\Desktop\identity-aspnetcore-external-provider-identity\IdentityByExamples\EmailService\obj\Debug\netcoreapp3.1\EmailService.pdb
+E:\FHM New\ZsMainProject\identity-aspnetcore-external-provider-identity\IdentityByExamples\EmailService\bin\Debug\netcoreapp3.1\EmailService.deps.json
+E:\FHM New\ZsMainProject\identity-aspnetcore-external-provider-identity\IdentityByExamples\EmailService\bin\Debug\netcoreapp3.1\EmailService.dll
+E:\FHM New\ZsMainProject\identity-aspnetcore-external-provider-identity\IdentityByExamples\EmailService\bin\Debug\netcoreapp3.1\EmailService.pdb
+E:\FHM New\ZsMainProject\identity-aspnetcore-external-provider-identity\IdentityByExamples\EmailService\obj\Debug\netcoreapp3.1\EmailService.csprojAssemblyReference.cache
+E:\FHM New\ZsMainProject\identity-aspnetcore-external-provider-identity\IdentityByExamples\EmailService\obj\Debug\netcoreapp3.1\EmailService.GeneratedMSBuildEditorConfig.editorconfig
+E:\FHM New\ZsMainProject\identity-aspnetcore-external-provider-identity\IdentityByExamples\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfoInputs.cache
+E:\FHM New\ZsMainProject\identity-aspnetcore-external-provider-identity\IdentityByExamples\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfo.cs
+E:\FHM New\ZsMainProject\identity-aspnetcore-external-provider-identity\IdentityByExamples\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.CoreCompileInputs.cache
+E:\FHM New\ZsMainProject\identity-aspnetcore-external-provider-identity\IdentityByExamples\EmailService\obj\Debug\netcoreapp3.1\EmailService.dll
+E:\FHM New\ZsMainProject\identity-aspnetcore-external-provider-identity\IdentityByExamples\EmailService\obj\Debug\netcoreapp3.1\EmailService.pdb
+C:\Users\cksof\Downloads\ZSpection\ZSpection\EmailService\bin\Debug\netcoreapp3.1\EmailService.deps.json
+C:\Users\cksof\Downloads\ZSpection\ZSpection\EmailService\bin\Debug\netcoreapp3.1\EmailService.dll
+C:\Users\cksof\Downloads\ZSpection\ZSpection\EmailService\bin\Debug\netcoreapp3.1\EmailService.pdb
+C:\Users\cksof\Downloads\ZSpection\ZSpection\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.AssemblyReference.cache
+C:\Users\cksof\Downloads\ZSpection\ZSpection\EmailService\obj\Debug\netcoreapp3.1\EmailService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cksof\Downloads\ZSpection\ZSpection\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfoInputs.cache
+C:\Users\cksof\Downloads\ZSpection\ZSpection\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfo.cs
+C:\Users\cksof\Downloads\ZSpection\ZSpection\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.CoreCompileInputs.cache
+C:\Users\cksof\Downloads\ZSpection\ZSpection\EmailService\obj\Debug\netcoreapp3.1\EmailService.dll
+C:\Users\cksof\Downloads\ZSpection\ZSpection\EmailService\obj\Debug\netcoreapp3.1\EmailService.pdb
+C:\Users\cksof\Downloads\ZSpection\New folder\ZSpection\EmailService\bin\Debug\netcoreapp3.1\EmailService.deps.json
+C:\Users\cksof\Downloads\ZSpection\New folder\ZSpection\EmailService\bin\Debug\netcoreapp3.1\EmailService.dll
+C:\Users\cksof\Downloads\ZSpection\New folder\ZSpection\EmailService\bin\Debug\netcoreapp3.1\EmailService.pdb
+C:\Users\cksof\Downloads\ZSpection\New folder\ZSpection\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.AssemblyReference.cache
+C:\Users\cksof\Downloads\ZSpection\New folder\ZSpection\EmailService\obj\Debug\netcoreapp3.1\EmailService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cksof\Downloads\ZSpection\New folder\ZSpection\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfoInputs.cache
+C:\Users\cksof\Downloads\ZSpection\New folder\ZSpection\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfo.cs
+C:\Users\cksof\Downloads\ZSpection\New folder\ZSpection\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.CoreCompileInputs.cache
+C:\Users\cksof\Downloads\ZSpection\New folder\ZSpection\EmailService\obj\Debug\netcoreapp3.1\EmailService.dll
+C:\Users\cksof\Downloads\ZSpection\New folder\ZSpection\EmailService\obj\Debug\netcoreapp3.1\EmailService.pdb
+E:\FHM New\zsp\ZSpection\EmailService\bin\Debug\netcoreapp3.1\EmailService.deps.json
+E:\FHM New\zsp\ZSpection\EmailService\bin\Debug\netcoreapp3.1\EmailService.dll
+E:\FHM New\zsp\ZSpection\EmailService\bin\Debug\netcoreapp3.1\EmailService.pdb
+E:\FHM New\zsp\ZSpection\EmailService\obj\Debug\netcoreapp3.1\EmailService.csprojAssemblyReference.cache
+E:\FHM New\zsp\ZSpection\EmailService\obj\Debug\netcoreapp3.1\EmailService.GeneratedMSBuildEditorConfig.editorconfig
+E:\FHM New\zsp\ZSpection\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfoInputs.cache
+E:\FHM New\zsp\ZSpection\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfo.cs
+E:\FHM New\zsp\ZSpection\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.CoreCompileInputs.cache
+E:\FHM New\zsp\ZSpection\EmailService\obj\Debug\netcoreapp3.1\EmailService.dll
+E:\FHM New\zsp\ZSpection\EmailService\obj\Debug\netcoreapp3.1\EmailService.pdb
+D:\vds projects\ZspectionWebNew\EmailService\bin\Debug\netcoreapp3.1\EmailService.deps.json
+D:\vds projects\ZspectionWebNew\EmailService\bin\Debug\netcoreapp3.1\EmailService.dll
+D:\vds projects\ZspectionWebNew\EmailService\bin\Debug\netcoreapp3.1\EmailService.pdb
+D:\vds projects\ZspectionWebNew\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.AssemblyReference.cache
+D:\vds projects\ZspectionWebNew\EmailService\obj\Debug\netcoreapp3.1\EmailService.GeneratedMSBuildEditorConfig.editorconfig
+D:\vds projects\ZspectionWebNew\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfoInputs.cache
+D:\vds projects\ZspectionWebNew\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfo.cs
+D:\vds projects\ZspectionWebNew\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.CoreCompileInputs.cache
+D:\vds projects\ZspectionWebNew\EmailService\obj\Debug\netcoreapp3.1\EmailService.dll
+D:\vds projects\ZspectionWebNew\EmailService\obj\Debug\netcoreapp3.1\EmailService.pdb
+D:\vds projects\zspectionwebportal\EmailService\bin\Debug\netcoreapp3.1\EmailService.deps.json
+D:\vds projects\zspectionwebportal\EmailService\bin\Debug\netcoreapp3.1\EmailService.dll
+D:\vds projects\zspectionwebportal\EmailService\bin\Debug\netcoreapp3.1\EmailService.pdb
+D:\vds projects\zspectionwebportal\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.AssemblyReference.cache
+D:\vds projects\zspectionwebportal\EmailService\obj\Debug\netcoreapp3.1\EmailService.GeneratedMSBuildEditorConfig.editorconfig
+D:\vds projects\zspectionwebportal\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfoInputs.cache
+D:\vds projects\zspectionwebportal\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfo.cs
+D:\vds projects\zspectionwebportal\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.CoreCompileInputs.cache
+D:\vds projects\zspectionwebportal\EmailService\obj\Debug\netcoreapp3.1\EmailService.dll
+D:\vds projects\zspectionwebportal\EmailService\obj\Debug\netcoreapp3.1\EmailService.pdb
